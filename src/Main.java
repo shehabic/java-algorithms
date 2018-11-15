@@ -15,7 +15,6 @@ public class Main {
         int[] mem = new int[n + 1];
         Arrays.fill(mem, -1);
         return countSteps(n, mem);
-
     }
 
     public static List<String> parents(int totalNumber) {
@@ -218,7 +217,8 @@ public class Main {
 //        WordLadder.test();
 //        ClosesPalindrome.test();
 //          LRUCache.test();
-        NumbersIsland.test();
+//        NumbersIsland.test();
+        TrieOptimized.test();
         exit(0);
 //        System.out.print(Arrays.asList("d", "g").indexOf(null) > -1);
 //
