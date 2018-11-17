@@ -29,7 +29,8 @@ public class Main {
 //        RemoveBadParentheses.test();
 //        ValidateParentheses.test();
 //        GenerateBraces.test();
-        LettersCombinationsOfPhoneNumber.test();
+//        LettersCombinationsOfPhoneNumber.test();
+        ThreeSumZero.test();
         exit(0);
 //        System.out.print(Arrays.asList("d", "g").indexOf(null) > -1);
 //
