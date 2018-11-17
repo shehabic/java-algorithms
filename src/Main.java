@@ -30,7 +30,9 @@ public class Main {
 //        ValidateParentheses.test();
 //        GenerateBraces.test();
 //        LettersCombinationsOfPhoneNumber.test();
-        ThreeSumZero.test();
+//        ThreeSumZero.test();
+//        RomanToDecimals.test();
+        MergeOverlappingIntervals.test();
         exit(0);
 //        System.out.print(Arrays.asList("d", "g").indexOf(null) > -1);
 //
