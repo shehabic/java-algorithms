@@ -9,32 +9,133 @@ import static java.lang.System.exit;
 
 public class Main {
 
+    public static void main(String[] args) {
+//        CDPath.test();
+//        NumberToString.test();
+//        TrieWithWildCardSearch.test();
+//        InsertNodeInTheRightPlace.test();
+//        Zerofy.test();
+//        LongestUniqueSequence.test();
+//        MediaOfTwoSortedArrays.test();
+//        ReverseInteger.test();
+//        MountainPeakArray.test();
+//        MergeKLinkedLists.test();
+//        WordLadder.test();
+//        ClosesPalindrome.test();
+//        LRUCache.test();
+//        NumbersIsland.test();
+//        TrieOptimized.test();
+//        NumToEnglishBlind.test();
+//        RemoveBadParentheses.test();
+//        ValidateParentheses.test();
+//        GenerateBraces.test();
+        LettersCombinationsOfPhoneNumber.test();
+        exit(0);
+//        System.out.print(Arrays.asList("d", "g").indexOf(null) > -1);
+//
+//        PriorityQueue<Integer> n = new PriorityQueue<>(10);
+//        n.add(1);
+//        n.add(2);
+//        n.add(3);
+//        n.add(4);
+//        n.add(5);
+//        n.add(6);
+//        n.add(7);
+//        n.add(8);
+//        n.add(9);
+//        n.add(10);
+//        System.out.print("N Peek is " + n.peek() + " N remove " + n.remove() + "\n");
+//        System.out.println(Decoder.decode("3[a2[b3[X]d]g4[ef2[z]]h]"));
+//        moveNonZeros();
+//         int [] arr = new int[]{0,2,3,4,1,5};
+//         int pos = AmazingNumbersBestPosition.findStartingPosition(arr);
+//         for (int i : arr) {
+//             System.out.print(i + " ");
+//         }
+//        System.out.print("Pos " + pos);
+//        printSums(10, 15, 55);
+//        ReverseTree.run();
+//            findIntervals.findIntervals();
+//        PermutateMultiWords.permutate();
+        kthLargest(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}, 6);
+//        List<Integer> i = getAnagramIndices("bbbababaaabbbb", "ab");
+//        System.out.println(i);
+//        palindrome();
+//        blabla();
+//          int result = insertBits(0b11011111001, 0b10011, 2, 6);
+//          System.out.println("Output is " + Integer.toBinaryString(result));
+//
+//          System.out.println("Ways are : " + countWays2(30));
+//        String x = "zghkalvb";
+//        char[] x2 = x.toCharArray();
+//        x = new String(x2);
+//        System.out.println("Sorted " + x);
+//        StairCase(6);
+//        int[] arr = new int[]{1, 10, 15, -5, -4, -2, 13, 7, 8, 2, -1, -3, -6, -9, 6, 9, 10, 11};
+//        Arrays.sort(arr);
+//        HashSet<String> output = new HashSet<String>();
+//        threeSumZero(arr, output);
+//        for (String s : output) {
+//            System.out.println(s);
+//        }
+
+//
+//        List<String> words = listAllChars(34);
+//        System.out.println(words.toString());
+//
+//        List<String> words2 = listAllChars(1348);
+//        System.out.println(words2.toString());
+//
+//        List<String> words3 = listAllChars(13042823);
+//        Collections.sort(words3, new Comparator<String>() {
+//            @Override
+//            public int compare(String o1, String o2) {
+//                return o1.compareToIgnoreCase(o2);
+//            }
+//        });
+//        System.out.println(words3.toString());
+//        int[] array = {15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14};
+//        int search = 5;
+//        int position = searchInSortedRotatedArray(array, search, 0, array.length - 1);
+//        System.out.println(String.format("Element with value %d found at position %d", search, position));
+//        List<String> sets = parents(4);
+//        System.out.println("Sets size " + sets.size());
+//        System.out.println(sets.toString());
+
+//        System.out.print("Counts 4 = " + countSteps(3));
+//        System.out.print("Counts 4 = " + countWays(3));
+//
+//        SortedStack stack = new SortedStack();
+////        Integer[] list = {5, 3, 6, 2, 1, 8, 4, 3, 6, 1, 1, 1, 1, 1, 1, 1, 1, 1};bv
+//        Integer[] list = {1, 2, 3, 4, 5, 6, 7, 8};
+//        System.out.println(String.format("Input: N = %d", list.length));
+//        for (Integer i : list) {
+//            stack.push(i);
+//            System.out.print(String.format("%d ", i));
+//        }
+//
+//        System.out.println("Output:");
+//        while (!stack.isEmpty()) {
+//            System.out.print(String.format("%d ", stack.pop()));
+//        }
+//        System.out.println(String.format("Runtime: O(%d)", loops));
+//        prepareIntervals();
+//        sortSquareArray();
+//        findBest();
+//            subArrayWithSum();
+//        testAddingToArray();
+//        HashMap<String , String> map = new HashMap<>();
+//        addUrl(map, "http://www-st.foodora.com.au/api/v5/abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ12345678910");
+//        System.out.println(map.toString());
+    }
+
+
     private static int loops = 0;
 
     public static int countSteps(int n) {
         int[] mem = new int[n + 1];
         Arrays.fill(mem, -1);
         return countSteps(n, mem);
-    }
-
-    public static List<String> parents(int totalNumber) {
-        return parents(totalNumber, totalNumber, new ArrayList<String>(), "");
-    }
-
-    public static List<String> parents(int openingsLeft, int closingsLeft, List<String> sets, String str) {
-        if (openingsLeft == 0 && closingsLeft == 0) {
-            sets.add(str);
-
-            return sets;
-        }
-        if (openingsLeft == 0 || openingsLeft < closingsLeft) {
-            sets = parents(openingsLeft, closingsLeft - 1, sets, str + "}");
-        }
-        if (openingsLeft > 0) {
-            sets = parents(openingsLeft - 1, closingsLeft, sets, str + "{");
-        }
-
-        return sets;
     }
 
     public static int countSteps(int n, int counts[]) {
@@ -201,121 +302,6 @@ public class Main {
                 generatePermutations(prefix + str.charAt(i), str.substring(0, i) + str.substring(i + 1, n), perms);
             }
         }
-    }
-
-    public static void main(String[] args) {
-//        CDPath.test();
-//        NumberToString.test();
-//        TrieWithWildCardSearch.test();
-//        InsertNodeInTheRightPlace.test();
-//        Zerofy.test();
-//        LongestUniqueSequence.test();
-//        MediaOfTwoSortedArrays.test();
-//        ReverseInteger.test();
-//        MountainPeakArray.test();
-//        MergeKLinkedLists.test();
-//        WordLadder.test();
-//        ClosesPalindrome.test();
-//          LRUCache.test();
-//        NumbersIsland.test();
-        TrieOptimized.test();
-        exit(0);
-//        System.out.print(Arrays.asList("d", "g").indexOf(null) > -1);
-//
-//        PriorityQueue<Integer> n = new PriorityQueue<>(10);
-//        n.add(1);
-//        n.add(2);
-//        n.add(3);
-//        n.add(4);
-//        n.add(5);
-//        n.add(6);
-//        n.add(7);
-//        n.add(8);
-//        n.add(9);
-//        n.add(10);
-//        System.out.print("N Peek is " + n.peek() + " N remove " + n.remove() + "\n");
-//        System.out.println(Decoder.decode("3[a2[b3[X]d]g4[ef2[z]]h]"));
-//        moveNonZeros();
-//         int [] arr = new int[]{0,2,3,4,1,5};
-//         int pos = AmazingNumbersBestPosition.findStartingPosition(arr);
-//         for (int i : arr) {
-//             System.out.print(i + " ");
-//         }
-//        System.out.print("Pos " + pos);
-//        printSums(10, 15, 55);
-//        ReverseTree.run();
-//            findIntervals.findIntervals();
-//        PermutateMultiWords.permutate();
-        kthLargest(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}, 6);
-//        List<Integer> i = getAnagramIndices("bbbababaaabbbb", "ab");
-//        System.out.println(i);
-//        palindrome();
-//        blabla();
-//          int result = insertBits(0b11011111001, 0b10011, 2, 6);
-//          System.out.println("Output is " + Integer.toBinaryString(result));
-//
-//          System.out.println("Ways are : " + countWays2(30));
-//        String x = "zghkalvb";
-//        char[] x2 = x.toCharArray();
-//        x = new String(x2);
-//        System.out.println("Sorted " + x);
-//        StairCase(6);
-//        int[] arr = new int[]{1, 10, 15, -5, -4, -2, 13, 7, 8, 2, -1, -3, -6, -9, 6, 9, 10, 11};
-//        Arrays.sort(arr);
-//        HashSet<String> output = new HashSet<String>();
-//        threeSumZero(arr, output);
-//        for (String s : output) {
-//            System.out.println(s);
-//        }
-
-//
-//        List<String> words = listAllChars(34);
-//        System.out.println(words.toString());
-//
-//        List<String> words2 = listAllChars(1348);
-//        System.out.println(words2.toString());
-//
-//        List<String> words3 = listAllChars(13042823);
-//        Collections.sort(words3, new Comparator<String>() {
-//            @Override
-//            public int compare(String o1, String o2) {
-//                return o1.compareToIgnoreCase(o2);
-//            }
-//        });
-//        System.out.println(words3.toString());
-//        int[] array = {15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14};
-//        int search = 5;
-//        int position = searchInSortedRotatedArray(array, search, 0, array.length - 1);
-//        System.out.println(String.format("Element with value %d found at position %d", search, position));
-//        List<String> sets = parents(4);
-//        System.out.println("Sets size " + sets.size());
-//        System.out.println(sets.toString());
-
-//        System.out.print("Counts 4 = " + countSteps(3));
-//        System.out.print("Counts 4 = " + countWays(3));
-//
-//        SortedStack stack = new SortedStack();
-////        Integer[] list = {5, 3, 6, 2, 1, 8, 4, 3, 6, 1, 1, 1, 1, 1, 1, 1, 1, 1};bv
-//        Integer[] list = {1, 2, 3, 4, 5, 6, 7, 8};
-//        System.out.println(String.format("Input: N = %d", list.length));
-//        for (Integer i : list) {
-//            stack.push(i);
-//            System.out.print(String.format("%d ", i));
-//        }
-//
-//        System.out.println("Output:");
-//        while (!stack.isEmpty()) {
-//            System.out.print(String.format("%d ", stack.pop()));
-//        }
-//        System.out.println(String.format("Runtime: O(%d)", loops));
-//        prepareIntervals();
-//        sortSquareArray();
-//        findBest();
-//            subArrayWithSum();
-//        testAddingToArray();
-//        HashMap<String , String> map = new HashMap<>();
-//        addUrl(map, "http://www-st.foodora.com.au/api/v5/abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ12345678910");
-//        System.out.println(map.toString());
     }
 
     public static class SortedStack extends MyStack<Integer> {
