@@ -32,7 +32,8 @@ public class Main {
 //        LettersCombinationsOfPhoneNumber.test();
 //        ThreeSumZero.test();
 //        RomanToDecimals.test();
-        MergeOverlappingIntervals.test();
+//        MergeOverlappingIntervals.test();
+        ReverseLinkedList.test();
         exit(0);
 //        System.out.print(Arrays.asList("d", "g").indexOf(null) > -1);
 //
