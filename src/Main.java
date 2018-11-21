@@ -33,7 +33,8 @@ public class Main {
 //        ThreeSumZero.test();
 //        RomanToDecimals.test();
 //        MergeOverlappingIntervals.test();
-        ReverseLinkedList.test();
+//        ReverseLinkedList.test();
+        FindSmallestKElements.test();
         exit(0);
 //        System.out.print(Arrays.asList("d", "g").indexOf(null) > -1);
 //
