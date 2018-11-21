@@ -34,7 +34,8 @@ public class Main {
 //        RomanToDecimals.test();
 //        MergeOverlappingIntervals.test();
 //        ReverseLinkedList.test();
-        FindSmallestKElements.test();
+        FindMinimumNumberOfRoomsForMeetings.test();
+//        FindSmallestKElements.test();
         exit(0);
 //        System.out.print(Arrays.asList("d", "g").indexOf(null) > -1);
 //
