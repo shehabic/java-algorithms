@@ -35,8 +35,13 @@ public class Main {
 //        MergeOverlappingIntervals.test();
 //        ReverseLinkedList.test();
 //        FindMinimumNumberOfRoomsForMeetings.test();
-        CanWeRemoveOneCharToMakeItPalindrome.test();
+//        CanWeRemoveOneCharToMakeItPalindrome.test();
+//        WordBreak.test();
+//        RespaceWords.test();
 //        FindSmallestKElements.test();
+//        MinWindow.test();
+//        GroupAnagrams.test();
+        RegexMatchDP.test();
         exit(0);
 //        System.out.print(Arrays.asList("d", "g").indexOf(null) > -1);
 //
