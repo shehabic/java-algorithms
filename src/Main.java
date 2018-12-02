@@ -39,9 +39,9 @@ public class Main {
 //        WordBreak.test();
 //        RespaceWords.test();
 //        FindSmallestKElements.test();
-//        MinWindow.test();
+        MinWindow.test();
 //        GroupAnagrams.test();
-        RegexMatchDP.test();
+//        RegexMatchDP.test();
         exit(0);
 //        System.out.print(Arrays.asList("d", "g").indexOf(null) > -1);
 //
