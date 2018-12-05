@@ -39,8 +39,9 @@ public class Main {
 //        WordBreak.test();
 //        RespaceWords.test();
 //        FindSmallestKElements.test();
-        TrappedWaterRain.test();
-//        MinWindow.test();
+//        TrappedWaterRain.test();
+        MaxSubArray.test();
+////        MinWindow.test();
 //        GroupAnagrams.test();
 //        RegexMatchDP.test();
         exit(0);
