@@ -40,8 +40,10 @@ public class Main {
 //        RespaceWords.test();
 //        FindSmallestKElements.test();
 //        TrappedWaterRain.test();
-        MaxSubArray.test();
+//        MaxSubArray.test();
 ////        MinWindow.test();
+//        LargestRectInHistogram.test();
+        FindLargestRectangleInMatrix.test();
 //        GroupAnagrams.test();
 //        RegexMatchDP.test();
         exit(0);
