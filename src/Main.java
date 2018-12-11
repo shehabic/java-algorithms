@@ -45,9 +45,12 @@ public class Main {
 //        LargestRectInHistogram.test();
 //        FindLargestRectangleInMatrix.test();
 //        CountPalindromicSubstrings.test();
-        FindKthLargestElement.test();
+//        FindKthLargestElement.test();
 //        GroupAnagrams.test();
 //        RegexMatchDP.test();
+//        CheckForPalindromeNumbers.test();
+//        NextClosesTimeSlot.test();
+        ReformatLicenceKey.test();
         exit(0);
 //        System.out.print(Arrays.asList("d", "g").indexOf(null) > -1);
 //
