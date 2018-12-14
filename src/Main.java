@@ -50,7 +50,9 @@ public class Main {
 //        RegexMatchDP.test();
 //        CheckForPalindromeNumbers.test();
 //        NextClosesTimeSlot.test();
-        ReformatLicenceKey.test();
+//        ReformatLicenceKey.test();
+//        FindTheNextPermutation.test();
+        LongestSubstringWithTwoDistincts.test();
         exit(0);
 //        System.out.print(Arrays.asList("d", "g").indexOf(null) > -1);
 //
