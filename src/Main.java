@@ -52,7 +52,11 @@ public class Main {
 //        NextClosesTimeSlot.test();
 //        ReformatLicenceKey.test();
 //        FindTheNextPermutation.test();
-        LongestSubstringWithTwoDistincts.test();
+//        FindAllPermutationsOfArray.test();
+//        LongestSubstringWithTwoDistincts.test();
+//        NearestPalindrome.test();
+//        FindTheSmallestMissingInteger.test();
+        FindTheFirstSmallestInteger.test();
         exit(0);
 //        System.out.print(Arrays.asList("d", "g").indexOf(null) > -1);
 //

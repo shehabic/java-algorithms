@@ -16,6 +16,7 @@ public class LongestSubstringWithTwoDistincts {
             "b",
             "ab"
         };
+        StringBuilder sb = new StringBuilder();
         for (String sample: samples) {
             System.out.println("Longest window in " + sample + " : " + sut.lengthOfLongestSubstringTwoDistinct(sample));
         }
