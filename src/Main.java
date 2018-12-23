@@ -56,7 +56,8 @@ public class Main {
 //        LongestSubstringWithTwoDistincts.test();
 //        NearestPalindrome.test();
 //        FindTheSmallestMissingInteger.test();
-        FindTheFirstSmallestInteger.test();
+//        FindTheFirstSmallestInteger.test();
+        MaxPalindromeSubstring.test();
         exit(0);
 //        System.out.print(Arrays.asList("d", "g").indexOf(null) > -1);
 //
