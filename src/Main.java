@@ -57,7 +57,9 @@ public class Main {
 //        NearestPalindrome.test();
 //        FindTheSmallestMissingInteger.test();
 //        FindTheFirstSmallestInteger.test();
-        MaxPalindromeSubstring.test();
+//        ShortestArrayWithSumEqualsK.test();
+        AlienDictionary.test();
+//        FindTheFirstSmallestInteger.test();
         exit(0);
 //        System.out.print(Arrays.asList("d", "g").indexOf(null) > -1);
 //
