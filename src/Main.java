@@ -2,7 +2,6 @@
 
 import com.sun.tools.javac.util.Pair;
 import solutions.*;
-
 import java.util.*;
 
 import static java.lang.System.exit;
@@ -58,8 +57,10 @@ public class Main {
 //        FindTheSmallestMissingInteger.test();
 //        FindTheFirstSmallestInteger.test();
 //        ShortestArrayWithSumEqualsK.test();
-        AlienDictionary.test();
+//        AlienDictionary.test();
 //        FindTheFirstSmallestInteger.test();
+//        TrieOptimized2.test();
+        QuickSelect.test();
         exit(0);
 //        System.out.print(Arrays.asList("d", "g").indexOf(null) > -1);
 //
