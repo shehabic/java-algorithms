@@ -19,4 +19,12 @@ public class Printing {
         return result.toString();
     }
 
+    public static String printArray(String separator, char[] items) {
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < items.length; i++) {
+            if (i > 0) result.append(separator);
+            result.append(items[i]);
+        }
+        return result.toString();
+    }
 }

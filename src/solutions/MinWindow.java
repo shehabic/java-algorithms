@@ -11,6 +11,8 @@ public class MinWindow {
         System.out.println("Result:" + res);
     }
 
+
+
     public String minWindow(String s, String t) {
         if (s.length() < t.length() || t.length() == 0) return "";
         // This map will not represent how many chars we have, but rather how many characters we need from the target.
