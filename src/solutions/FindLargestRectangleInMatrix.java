@@ -2,6 +2,9 @@ package solutions;
 
 import Utils.Printing;
 
+import java.util.Deque;
+import java.util.LinkedList;
+
 public class FindLargestRectangleInMatrix {
     public static void test() {
         FindLargestRectangleInMatrix sut = new FindLargestRectangleInMatrix();
@@ -26,13 +29,36 @@ public class FindLargestRectangleInMatrix {
     public int maximalRectangle(int[][] matrix) {
         if (matrix == null || matrix.length == 0)return 0;
         int result = 0;
-        int[] arr = new int[matrix[0].length];
+        int[] histo = new int[matrix[0].length];
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
-                arr[j] = matrix[i][j] == 0 ? 0 : arr[j] + matrix[i][j];
+                histo[j] = matrix[i][j] == 0 ? 0 : histo[j] + matrix[i][j];
             }
-            result = Math.max(result, LargestRectInHistogram.findLargestRectInHistogram(arr));
+            result = Math.max(result, maximalRectangleInHistogram(histo));
         }
         return result;
+    }
+
+    public int maximalRectangleInHistogram(int[] hist) {
+        int maxArea = 0;
+        int topVal = 0;
+        int area = 0;
+        int i = 0;
+        Deque<Integer> stack = new LinkedList<>();
+        while (i < hist.length) {
+            if (stack.isEmpty() || hist[i] >= hist[stack.peekFirst()]) {
+                stack.offerFirst(i++);
+            } else {
+                topVal = hist[stack.removeFirst()];
+                area = topVal * (stack.isEmpty() ? i : i - stack.peekFirst() - 1);
+                maxArea = Math.max(maxArea, area);
+            }
+        }
+        while (!stack.isEmpty()) {
+            topVal = hist[stack.removeFirst()];
+            area = topVal * (stack.isEmpty() ? i : i - stack.peekFirst() - 1);
+            maxArea = Math.max(maxArea, area);
+        }
+        return maxArea;
     }
 }
