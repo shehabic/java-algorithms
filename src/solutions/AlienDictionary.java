@@ -57,7 +57,7 @@ public class AlienDictionary {
     }
 
     private String getOrder() {
-        LinkedList<Character> queue = new LinkedList<>();
+        Queue<Character> queue = new LinkedList<>();
         for (Character c : levels.keySet()) {
             if (levels.get(c) == 0) queue.add(c);
         }
