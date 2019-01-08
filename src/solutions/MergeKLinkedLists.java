@@ -6,12 +6,13 @@ import java.util.Map;
 public class MergeKLinkedLists {
 
     static public void test() {
+        MergeKLinkedLists sut = new MergeKLinkedLists();
         int[][] inputs = new int[][]{{1,4,5},{1,3,4},{2,6}};
         ListNode[] nodes = new ListNode[inputs.length];
         for (int i = 0; i < inputs.length; i++) {
             nodes[i] = createNodes(inputs[i]);
         }
-        ListNode results = mergeKLists(nodes);
+        ListNode results = sut.mergeKLists(nodes);
         System.out.println(results);
     }
 
@@ -34,37 +35,27 @@ public class MergeKLinkedLists {
         return result.next;
     }
 
-    public static ListNode mergeKLists(ListNode[] lists) {
-        int count = lists.length;
-        ListNode result = new ListNode(0);
-        ListNode current = result;
-        ListNode[] pointers = new ListNode[count];
-        int min;
-        int smallest = 0;
-        for (int i = 0; i < count; i++) pointers[i] = lists[i];
-        while (stillHasItems(pointers)) {
-            min = Integer.MAX_VALUE;
-            for (int i = 0; i < count; i++) {
-                if (pointers[i] != null && pointers[i].val <= min) {
-                    smallest = i;
-                    min = pointers[i].val;
-                }
-            }
-            current.next = pointers[smallest];
-            current = current.next;
-            pointers[smallest] = pointers[smallest].next;
-        }
-
-        return result.next;
+    public ListNode mergeKLists(ListNode[] lists) {
+        if (lists == null || lists.length == 0) return null;
+        return mergeKLists(lists, 0, lists.length - 1);
     }
 
-    static boolean stillHasItems(ListNode[] pointers) {
-        Map<String, Integer> x = new HashMap<>();
-        for (ListNode node : pointers) {
-            if (node != null) {
-                return true;
-            }
+    private ListNode mergeKLists(ListNode[] lists, int start, int end) {
+        if (start >= end) return lists[start];
+        int mid = start + (end - start) / 2;
+        ListNode first = mergeKLists(lists, start, mid);
+        ListNode second = mergeKLists(lists, mid + 1, end);
+        return mergeTwoLists(first, second);
+    }
+
+    private ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        if (l1 == null) return l2;
+        if (l2 == null) return l1;
+        if (l1.val < l2.val) {
+            l1.next = mergeTwoLists(l1.next, l2);
+            return l1;
         }
-        return false;
+        l2.next = mergeTwoLists(l1, l2.next);
+        return l2;
     }
 }
