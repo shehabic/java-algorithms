@@ -2,6 +2,8 @@ package solutions;
 
 import Utils.Printing;
 
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.Stack;
 
 public class LargestRectInHistogram {
@@ -20,7 +22,7 @@ public class LargestRectInHistogram {
 
     public static int findLargestRectInHistogram(int[] hist) {
         int res = 0;
-        Stack<Integer> stack = new Stack<>();
+        Deque<Integer> stack = new LinkedList<>();
         int i = 0;
         while (i < hist.length) {
             if (stack.isEmpty() || hist[stack.peek()] <= hist[i]) {

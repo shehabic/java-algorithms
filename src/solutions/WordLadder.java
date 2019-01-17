@@ -1,5 +1,7 @@
 package solutions;
 
+import Utils.Printing;
+
 import java.util.*;
 
 public class WordLadder {
@@ -19,7 +21,7 @@ public class WordLadder {
             {"put"},
         };
         for (int i = 0; i < set.length; i += 3) {
-            System.out.println("Input: " + String.join(",", set[i]));
+            System.out.println("Input: " + Printing.printArray(",", set[i]));
             System.out.println("Begin: " + set[i + 1][0]);
             System.out.println("End: " + set[i + 2][0]);
             System.out.println("Result: " + ladderLength(set[i + 1][0], set[i + 2][0], Arrays.asList(set[i])));
