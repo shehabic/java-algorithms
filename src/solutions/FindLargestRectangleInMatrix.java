@@ -46,17 +46,17 @@ public class FindLargestRectangleInMatrix {
         int i = 0;
         Deque<Integer> stack = new LinkedList<>();
         while (i < hist.length) {
-            if (stack.isEmpty() || hist[i] >= hist[stack.peekFirst()]) {
-                stack.offerFirst(i++);
+            if (stack.isEmpty() || hist[i] >= hist[stack.peek()]) {
+                stack.push(i++);
             } else {
-                topVal = hist[stack.removeFirst()];
-                area = topVal * (stack.isEmpty() ? i : i - stack.peekFirst() - 1);
+                topVal = hist[stack.pop()];
+                area = topVal * (stack.isEmpty() ? i : i - stack.peek() - 1);
                 maxArea = Math.max(maxArea, area);
             }
         }
         while (!stack.isEmpty()) {
-            topVal = hist[stack.removeFirst()];
-            area = topVal * (stack.isEmpty() ? i : i - stack.peekFirst() - 1);
+            topVal = hist[stack.pop()];
+            area = topVal * (stack.isEmpty() ? i : i - stack.peek() - 1);
             maxArea = Math.max(maxArea, area);
         }
         return maxArea;

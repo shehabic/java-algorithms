@@ -26,21 +26,23 @@ public class SkyLinesProblem {
             if (a.x != b.x) return a.x - b.x;
             return (a.isStart ? -a.height : a.height) - (b.isStart ? -b.height : b.height);
         });
-        PriorityQueue<Integer> prio = new PriorityQueue<>((a, b) -> (b - a));
+        TreeMap<Integer, Integer> tree = new TreeMap<>((a, b) -> (b - a));
         int prevMax = 0;
         List<int[]> results = new ArrayList<>();
-        prio.add(0);
+        tree.put(0, 1);
         for (BuildingPoint p : points) {
             if (p.isStart) {
-                prio.add(p.height);
+                tree.put(p.height, tree.getOrDefault(p.height, 0) + 1);
             } else {
-                prio.remove(p.height);
+                tree.put(p.height, tree.get(p.height) - 1);
+                if (tree.get(p.height) == 0) tree.remove(p.height);
             }
-            if (prevMax != prio.peek()) {
-                results.add(new int[]{p.x, prio.peek()});
-                prevMax = prio.peek();
+            if (prevMax != tree.lastKey()) {
+                results.add(new int[]{p.x, tree.lastKey()});
+                prevMax = tree.lastKey();
             }
         }
+
         return results;
     }
 
