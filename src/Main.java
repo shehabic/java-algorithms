@@ -42,7 +42,7 @@ public class Main {
 //        MaxSubArray.test();
 //        MinWindow.test();
 //        LargestRectInHistogram.test();
-        FindLargestRectangleInMatrix.test();
+//        FindLargestRectangleInMatrix.test();
 //        CountPalindromicSubstrings.test();
 //        FindKthLargestElement.test();
 //        GroupAnagrams.test();
@@ -64,6 +64,7 @@ public class Main {
 //        ShortestSubArrayWithSumAtLeastK.test();
 //        TaskScheduler.test();
 //        Playground.test();
+        MaximumSumSubArrays.test();
         exit(0);
 //        System.out.print(Arrays.asList("d", "g").indexOf(null) > -1);
 //
