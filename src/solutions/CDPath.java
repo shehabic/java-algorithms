@@ -1,42 +1,32 @@
 package solutions;
 
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.List;
+
 public class CDPath {
     public static String path(String currentPath, String newPath) {
-        String[] part1 = currentPath.split("/");
-        int end1 = part1.length - 1;
-
-        if (newPath.startsWith("/")) {
-            end1 = -1;
-            newPath = newPath.substring(1);
-        }
-        String[] part2 = newPath.split("/");
-        int start2 = 0;
-        for(String dir: part2) {
-            if (dir.equals(".")) {
-                start2++;
-            } else if (dir.equals("..")) {
-                end1--;
-                start2++;
-            }
-        }
-        StringBuilder builder = new StringBuilder();
-        if (end1 >= 0) {
-            for (int i = 0; i <= end1; i++) {
-                if (i > 0) {
-                    builder.append("/");
+            String path = newPath.startsWith("/") ? newPath : currentPath + "/" + newPath;
+            Deque<String> stack = new LinkedList<>();
+            String[] parts = path.split("/");
+            List<String> result = new ArrayList<>();
+            String output = "";
+            for (String s: parts) {
+                if (s.equals(".") || s.equals("")) continue;
+                if (s.equals("..")) {
+                    if (!stack.isEmpty()) stack.pop();
+                } else {
+                    stack.push(s);
                 }
-                builder.append(part1[i]);
             }
-        }
-        if (start2 <= part2.length - 1) {
-            for (int i = start2; i < part2.length; i++) {
-                builder.append("/");
-                builder.append(part2[i]);
+            while (!stack.isEmpty()) {
+                result.add(stack.pop());
             }
-        }
-
-
-        return builder.toString();
+            for (int i = result.size() - 1; i >= 0; i--) {
+                output += "/" + result.get(i);
+            }
+            return output.length() == 0 ? "/" : output;
     }
 
     public static void test() {
