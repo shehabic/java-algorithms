@@ -4,7 +4,7 @@ public class ClosestPalindrome {
 
     public static void test() {
         ClosestPalindrome sut = new ClosestPalindrome();
-        String[] intputs = new String[]{ "123", "12345", "2334566", "1", "11", "1221"};
+        String[] intputs = new String[]{ "123", "12345", "2334566", "1", "11", "1221", "9999", "100000"};
         for (String input: intputs) {
             System.out.println("Palindrome of " + input + " is: " + sut.nearestPalindromic(input));
         }
