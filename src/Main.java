@@ -20,7 +20,8 @@ public class Main {
 //        MountainPeakArray.test();
 //        MergeKLinkedLists.test();
 //        WordLadder.test();
-        ClosestPalindrome.test();
+        TinyURLGenerator.test();
+//        ClosestPalindrome.test();
         exit(0);
 //        LRUCache.test();
 //        NumbersIsland.test();
