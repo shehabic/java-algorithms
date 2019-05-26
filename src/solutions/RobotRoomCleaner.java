@@ -5,10 +5,25 @@ import java.util.Set;
 
 public class RobotRoomCleaner {
 
+    public static void main(String args[]) {
+        int[][] room = {
+            {0, 1, 1, 1},
+            {1, 1, 1, 1},
+            {1, 1, 0, 0},
+            {1, 1, 1, 1},
+        };
+        int[] pos = {1, 1};
+        Robot robot = new RobotImpl(room, pos);
+        new RobotRoomCleaner().cleanRoom(robot);
+    }
+
     interface Robot {
         boolean move();
+
         void turnLeft();
+
         void turnRight();
+
         void clean();
     }
 
@@ -26,22 +41,13 @@ public class RobotRoomCleaner {
             if (robot.move()) {
                 int row = i, col = j;
                 switch (dir) {
-                    case 0:
-                        row = i - 1;
-                        break;
-                    case 90:
-                        col = j + 1;
-                        break;
-                    case 180:
-                        row = i + 1;
-                        break;
-                    case 270:
-                        col = j - 1;
-                        break;
+                    case 0: row = i - 1; break;
+                    case 90: col = j + 1; break;
+                    case 180: row = i + 1; break;
+                    case 270: col = j - 1; break;
                 }
                 // visit next branch
                 dfs(robot, row, col, dir, visited);
-                // return to initial position
                 robot.turnLeft();
                 robot.turnLeft();
                 robot.move();
@@ -52,6 +58,64 @@ public class RobotRoomCleaner {
             robot.turnRight();
             dir += 90;
             dir = dir % 360;
+        }
+    }
+
+    static class RobotImpl implements Robot {
+
+        int[] pos;
+        int[][] room;
+        int dir = 0; // up: 0, right: 1, down: 2, left: 3
+
+        public RobotImpl(int[][] room, int[] pos) {
+            this.room = room;
+            this.pos = pos;
+        }
+
+        @Override
+        public boolean move() {
+            int x = 0, y = 0;
+            switch (dir) {
+                case 0:
+                    y = -1;
+                    break;
+                case 1:
+                    x = 1;
+                    break;
+                case 2:
+                    y = 1;
+                    break;
+                case 3:
+                    x = -1;
+                    break;
+            }
+            int newX = pos[0] + x;
+            int newY = pos[1] + y;
+            boolean outOfbounds = (newX < 0 || newY < 0 || newX > room.length - 1 || newY > room[0].length - 1);
+            if (outOfbounds || room[newX][newY] == 0) {
+                return false;
+            }
+            pos = new int[]{newX, newY};
+            System.out.println("Robot at: " + pos[0] + " , " + pos[1]);
+
+            return true;
+        }
+
+        @Override
+        public void turnLeft() {
+            dir -= 1;
+            if (dir < 0) dir = 3;
+        }
+
+        @Override
+        public void turnRight() {
+            dir += 1;
+            if (dir > 3) dir = 0;
+        }
+
+        @Override
+        public void clean() {
+            System.out.println("Cleaning  " + pos[0] + " , " + pos[1]);
         }
     }
 }
